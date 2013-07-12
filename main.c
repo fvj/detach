@@ -11,13 +11,9 @@ int main(int argc, char **argv, char **envp) {
     char *arguments[argc - 1];
 
     arguments[0] = argv[1];
-
     for(i = 1; i < argc - 1; i++)
       arguments[i] = argv[i+1];
     arguments[i] = NULL;
-
-    for(i = 0; i < argc - 1; i++)
-      printf("%d: %s\n", i, arguments[i]);
 
     return execvp(argv[1], arguments);
   }
