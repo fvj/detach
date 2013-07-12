@@ -2,6 +2,10 @@
 #include <unistd.h>
 
 int main(int argc, char **argv, char **envp) {
+  if(argc < 2) {
+    printf("usage: %s <program> [<argument-1> <argument-n>]\n", argv[0]);
+    return 1;
+  }
   if(fork() == 0) {
     int i;
     char *arguments[argc - 1];
